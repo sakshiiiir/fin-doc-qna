@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pdfplumber
+sentence-transformers
+faiss-cpu
+numpy
+requests
+huggingface_hub
+google-genai
+torch
+transformers
+peft
+accelerate

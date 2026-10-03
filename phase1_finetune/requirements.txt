@@ -1,0 +1,17 @@
+# -- Data generation (runs locally on Mac) --
+sec-edgar-downloader
+beautifulsoup4
+pyyaml
+google-genai
+
+# -- Evaluation (needs HF model access) --
+datasets
+wandb
+torch
+transformers>=4.43
+accelerate
+
+# -- Training (GPU only — run on Kaggle/Modal, not Mac) --
+# trl>=0.9
+# peft>=0.11
+# bitsandbytes>=0.43

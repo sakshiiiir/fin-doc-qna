@@ -1,0 +1,41 @@
+model_name: mlx-community/Meta-Llama-3.1-8B-4bit
+dataset_path: data/train.jsonl
+val_split: 0.05
+seed: 42
+
+qlora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules: [q_proj, v_proj]
+  bias: none
+  task_type: CAUSAL_LM
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_use_double_quant: true
+
+training:
+  num_epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 1e-5
+  lr_scheduler_type: cosine
+  warmup_ratio: 0.03
+  max_seq_length: 1024
+  bf16: true
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 50
+  save_total_limit: 2
+
+wandb:
+  project: finsight-llama-qlora
+  run_name: null
+
+output:
+  model_dir: ./finsight-llama-qlora
+  hub_repo: your-hf-username/finsight-llama-3.1-8b
+  push_to_hub: false

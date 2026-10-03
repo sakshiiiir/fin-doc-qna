@@ -1,0 +1,16 @@
+.env
+phase2_backend/logs/
+phase2_backend/storage/
+wandb/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+# trained weights / checkpoints: host on the Hugging Face Hub instead
+*.safetensors
+phase1_finetune/finsight-llama-qlora/
+# local eval output and generated training data
+phase1_finetune/data/eval_results.jsonl
+phase1_finetune/data/raw/
+phase1_finetune/data/mlx_data/
+.claude/
