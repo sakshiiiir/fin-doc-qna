@@ -1,16 +1,32 @@
+# Secrets
 .env
-phase2_backend/logs/
-phase2_backend/storage/
-wandb/
+*.env
+!.env.example
+
+# Python
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# OS / editor / tool settings
 .DS_Store
-# trained weights / checkpoints: host on the Hugging Face Hub instead
+.claude/
+.idea/
+.vscode/
+
+# Runtime artifacts
+phase2_backend/logs/
+phase2_backend/storage/
+wandb/
+
+# Model weights / checkpoints (hosted on the Hugging Face Hub instead)
 *.safetensors
+*.bin
+*.gguf
 phase1_finetune/finsight-llama-qlora/
-# local eval output and generated training data
-phase1_finetune/data/eval_results.jsonl
+
+# Large or generated data
 phase1_finetune/data/raw/
 phase1_finetune/data/mlx_data/
-.claude/
+phase1_finetune/data/eval_results.jsonl
